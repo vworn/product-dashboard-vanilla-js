@@ -48,3 +48,6 @@ function handleError(error) {
     console.error('An error occurred:', error.message); // log error message
   }
   
+  // Task 6: Call both fetch functions when page loads
+fetchProductsThen(); // logs product names to console
+fetchProductsAsync(); // renders product cards in the DOM
