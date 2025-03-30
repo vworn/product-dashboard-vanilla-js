@@ -8,3 +8,14 @@ function fetchProductsThen() {
       })
       .catch((error) => handleError(error)); // handle errors
   }
+
+  // Task 3: Fetch products using async/await and try/catch
+async function fetchProductsAsync() {
+    try {
+      const res = await fetch('https://www.course-api.com/javascript-store-products'); // fetch data
+      const data = await res.json(); // parse JSON response
+      displayProducts(data); // display data on page
+    } catch (error) {
+      handleError(error); // catch and handle errors
+    }
+  }
