@@ -42,3 +42,9 @@ function displayProducts(products) {
       container.appendChild(productDiv); // add product to page
     });
   }
+
+  // Task 5: Handle and log any errors
+function handleError(error) {
+    console.error('An error occurred:', error.message); // log error message
+  }
+  
