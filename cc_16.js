@@ -19,3 +19,26 @@ async function fetchProductsAsync() {
       handleError(error); // catch and handle errors
     }
   }
+
+  // Task 4: Display the first 5 products on the page
+function displayProducts(products) {
+    const container = document.getElementById('product-container'); // select product container
+    const firstFive = products.slice(0, 5); // get first 5 products
+  
+    // loop through products and create HTML elements
+    firstFive.forEach((product) => {
+      const { name, price, image } = product.fields;
+  
+      const productDiv = document.createElement('div');
+      productDiv.classList.add('product'); // add class for styling
+  
+      // create product HTML content
+      productDiv.innerHTML = `
+        <img src="${image[0].url}" alt="${name}" />
+        <h2>${name}</h2>
+        <p>$${(price / 100).toFixed(2)}</p>
+      `;
+  
+      container.appendChild(productDiv); // add product to page
+    });
+  }
